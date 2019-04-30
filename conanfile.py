@@ -1,5 +1,5 @@
 from conans import ConanFile, CMake
-
+import os
 
 class LinuxdeploypluginqtConan(ConanFile):
     name = "linuxdeploy-plugin-appimage"
@@ -25,6 +25,9 @@ class LinuxdeploypluginqtConan(ConanFile):
 
     def package(self):
         self.copy("*linuxdeploy-plugin-appimage", dst="bin", src="src")
+
+    def package_info(self):
+        self.env_info.PATH.append(os.path.join(self.package_folder, "bin"))
 
     def deploy(self):
         self.copy("*", dst="bin", src="bin")
