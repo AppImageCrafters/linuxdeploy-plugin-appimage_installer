@@ -2,8 +2,8 @@ from conans import ConanFile, CMake
 
 
 class LinuxdeploypluginqtConan(ConanFile):
-    name = "linuxdeploy-plugin-qt"
-    version = "continous"
+    name = "linuxdeploy-plugin-appimage"
+    version = "continuous"
     license = "<Put the package license here>"
     author = "<Put your name here> <And your email here>"
     url = "<Package recipe repository url here, for issues about the package>"

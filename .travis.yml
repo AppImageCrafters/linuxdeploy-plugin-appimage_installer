@@ -1,6 +1,6 @@
 env:
   global:
-    - CONAN_REFERENCE: "linuxdeploy-plugin-qt/continous"
+    - CONAN_REFERENCE: "linuxdeploy-plugin-appimage/continuous"
     - CONAN_USERNAME: "appimage-conan-community"
     - CONAN_LOGIN_USERNAME: "azubieta"
     - CONAN_CHANNEL: "stable"
