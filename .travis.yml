@@ -1,0 +1,33 @@
+env:
+  global:
+    - CONAN_REFERENCE: "linuxdeploy-plugin-qt/continous"
+    - CONAN_USERNAME: "azubieta"
+    - CONAN_LOGIN_USERNAME: "appimage-conan-community"
+    - CONAN_CHANNEL: "stable"
+    - CONAN_UPLOAD: "https://api.bintray.com/conan/appimage-conan-community/public-conan"
+
+linux: &linux
+  os: linux
+  dist: xenial
+  sudo: required
+  language: python
+  python: "3.6"
+  services:
+    - docker
+osx: &osx
+  os: osx
+  language: generic
+matrix:
+  include:
+
+    - <<: *linux
+      env: CONAN_GCC_VERSIONS=4.9 CONAN_DOCKER_IMAGE=conanio/gcc49 CONAN_UPLOAD_DEPENDENCIES="all"
+
+
+install:
+  - chmod +x .travis/install.sh
+  - ./.travis/install.sh
+
+script:
+  - chmod +x .travis/run.sh
+  - ./.travis/run.sh
