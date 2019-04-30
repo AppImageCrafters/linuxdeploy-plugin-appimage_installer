@@ -1,8 +1,8 @@
 env:
   global:
     - CONAN_REFERENCE: "linuxdeploy-plugin-qt/continous"
-    - CONAN_USERNAME: "azubieta"
-    - CONAN_LOGIN_USERNAME: "appimage-conan-community"
+    - CONAN_USERNAME: "appimage-conan-community"
+    - CONAN_LOGIN_USERNAME: "azubieta"
     - CONAN_CHANNEL: "stable"
     - CONAN_UPLOAD: "https://api.bintray.com/conan/appimage-conan-community/public-conan"
 
