@@ -14,6 +14,8 @@ class LinuxdeploypluginqtConan(ConanFile):
     generators = "cmake_paths"
 
     requires = ("appimagetool_installer/11@appimage-conan-community/stable")
+    build_requires = ("cmake_installer/3.13.0@conan/stable")
+    
     exports_sources = "src/*"
 
     def build(self):
