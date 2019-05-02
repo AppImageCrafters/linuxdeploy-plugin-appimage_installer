@@ -15,8 +15,12 @@ class LinuxdeploypluginqtConan(ConanFile):
 
     requires = ("appimagetool_installer/11@appimage-conan-community/stable")
     build_requires = ("cmake_installer/3.13.0@conan/stable")
-    
+
     exports_sources = "src/*"
+
+    def source(self):
+        self.run("git clone https://github.com/linuxdeploy/linuxdeploy-plugin-appimage.git --depth=1")
+        self.run("cd linuxdeploy-plugin-appimage && git submodule update --init --recursive")
 
     def build(self):
         cmake = CMake(self)
