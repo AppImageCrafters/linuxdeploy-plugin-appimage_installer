@@ -1,21 +1,20 @@
 from conans import ConanFile, CMake
 import os
 
+
 class LinuxdeploypluginqtConan(ConanFile):
     name = "linuxdeploy-plugin-appimage"
     version = "continuous"
-    license = "<Put the package license here>"
-    author = "<Put your name here> <And your email here>"
-    url = "<Package recipe repository url here, for issues about the package>"
-    description = "<Description of Linuxdeploypluginqt here>"
-    topics = ("AppImage", "linuxdeploy", "plugin")
+    license = "MIT"
+    author = "Alexis Lopez Zubieta contact@azubieta.net"
+    url = "https://github.com/appimage-conan-community/linuxdeploy-plugin-appimage_installer"
+    description = "linuxdeploy plugin to generate AppImages from AppDirs"
+    topics = ("AppImage", "linuxdeploy", "pluggin")
     settings = "os", "compiler", "build_type", "arch"
     generators = "cmake_paths"
-    exports_sources = "src/*"
 
-    def source(self):
-        self.run("git clone https://github.com/linuxdeploy/linuxdeploy-plugin-appimage.git --depth=1")
-        self.run("cd linuxdeploy-plugin-appimage && git submodule update --init --recursive")
+    requires = ("appimagetool_installer/11@appimage-conan-community/stable")
+    exports_sources = "src/*"
 
     def build(self):
         cmake = CMake(self)
